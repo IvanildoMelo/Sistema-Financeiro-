@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Frequência Ala </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 id="org-display">Quórum de Élderes</h2>
+        <select id="theme-selector" onchange="changeTheme()">
+            <option value="quorum">Quórum de Élderes</option>
+            <option value="sociedade">Sociedade de Socorro</option>
+            <option value="mocas">Moças</option>
+            <option value="rapazes">Rapazes</option>
+            <option value="primaria">Primária</option>
+        </select>
+    </header>
+
+    <main>
+        <section class="counter-card">
+            <h3>Contagem Geral / Visitantes</h3>
+            <div class="counter-controls">
+                <button onclick="updateQuickCount(-1)">−</button>
+                <span id="quick-count-val">0</span>
+                <button onclick="updateQuickCount(1)">+</button>
+            </div>
+        </section>
+
+        <section class="input-area">
+            <input type="text" id="member-name" placeholder="Nome do membro...">
+            <button onclick="addMember()">Anotar</button>
+        </section>
+
+        <div class="list-header">
+            <span>Lista Nominal</span>
+            <span id="nominal-total">0 pessoas</span>
+        </div>
+        <ul id="attendance-list"></ul>
+
+        <div class="footer-actions">
+            <button class="btn-share" onclick="shareReport()">📤 Compartilhar no WhatsApp</button>
+            <button class="btn-clear" onclick="clearData()">🗑️ Limpar Tudo</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
